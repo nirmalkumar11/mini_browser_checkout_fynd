@@ -1,0 +1,16 @@
+body { font-family: system-ui, sans-serif; margin: 0; background: #f6f6f6; color: #222; }
+main { max-width: 36rem; margin: 2rem auto; padding: 1.5rem; background: #fff; border-radius: 6px; }
+ul { list-style: none; padding: 0; margin: 0; }
+li { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding: .5rem 0; border-bottom: 1px solid #eee; }
+.cart li > span:first-child { flex: 1; }
+.cart input { width: 3.5rem; }
+label { display: block; font-weight: 600; margin-bottom: .25rem; }
+#customer-name { width: 100%; box-sizing: border-box; padding: .4rem; }
+#customer-name[aria-invalid="true"] { border: 2px solid #b00020; }
+.error { color: #b00020; margin: .4rem 0; }
+.total { font-size: 1.1rem; text-align: right; }
+button { padding: .4rem .9rem; cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+#place-order { margin-top: .75rem; }
+.confirmation { border: 2px solid #1b7f3b; border-radius: 6px; padding: 1rem; }
+[hidden] { display: none !important; }

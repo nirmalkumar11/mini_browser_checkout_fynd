@@ -1,0 +1,20 @@
+=== MUTATION A: server trusts client prices (api project) ===
+  ✘   8 [api] › tests/api/orders.api.spec.js:70:3 › POST /api/orders: total cannot be tampered with › ignores client-supplied prices on line items (99ms)
+  1 failed
+  36 passed (3.9s)
+=== MUTATION B: quantity lower bound removed (api project) ===
+  ✘  10 [api] › tests/api/orders.api.spec.js:98:5 › POST /api/orders: total cannot be tampered with › rejects quantity that is negative (would reduce the total) (39ms)
+  ✘  11 [api] › tests/api/orders.api.spec.js:98:5 › POST /api/orders: total cannot be tampered with › rejects quantity that is zero (84ms)
+      102 |       expect(body.error).toBe('validation_failed');
+      102 |       expect(body.error).toBe('validation_failed');
+  2 failed
+  35 passed (4.3s)
+=== MUTATION C: duplicate-submit guard removed (ui project) ===
+  ✘   6 [ui] › tests/ui/checkout-api.spec.js:93:1 › Two submits in one task, while the request is in flight, send one request (1.9s)
+  ✘  19 [ui] › tests/ui/checkout.spec.js:108:1 › Two back-to-back submits keep the first reference (6.4s)
+    test-results/checkout-api-Two-submits-i-c99f7--in-flight-send-one-request-ui/test-failed-1.png
+    Error: expect(locator).toHaveText(expected) failed
+    test-results/checkout-Two-back-to-back-submits-keep-the-first-reference-ui/test-failed-1.png
+  2 failed
+  18 passed (22.8s)
+RESTORED: files identical to originals

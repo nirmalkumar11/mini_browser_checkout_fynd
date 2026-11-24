@@ -1,0 +1,34 @@
+{
+  "name": "mini-checkout",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Mini Checkout: React (Vite) UI, Express API and Playwright UI + API tests",
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "node server/index.js",
+    "dev:client": "vite",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "test": "playwright test",
+    "test:ui": "playwright test --project=ui",
+    "test:api": "playwright test --project=api",
+    "test:headed": "playwright test --project=ui --headed",
+    "test:repeat": "playwright test --repeat-each=5",
+    "report": "playwright show-report docs/playwright-report"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.0",
+    "vite": "^5.4.11"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
